@@ -17,11 +17,12 @@
 #         for record in self:
 #             record.value2 = float(record.value) / 100
 
-from odoo import models, fields, api
+from odoo import models, fields
 
-class strain(models.Model):
+
+class Strain(models.Model):
     _name = 'tb_modulo.strain'
-    _description = 'Definir una variedad'
+    _description = 'Definir una Variedad'
 
     name = fields.Char('Variedad', required=True)
     semanas = fields.Integer(string='Semanas', required=True)
@@ -29,11 +30,12 @@ class strain(models.Model):
 
     bank_id = fields.Many2many('tb_modulo.bank', string='Banco')
 
-class bank(models.Model):
+
+class Bank(models.Model):
     _name = 'tb_modulo.bank'
     _description = 'Banco de variedades'
 
-    name = fields.Char(string='Banco', required = True)
+    name = fields.Char(string='Banco', required=True)
 
-    #relacion tablas
-    #strain_ids = fields.Many2one('tb_modulo.strain', bank_id, string='Variedades')
+#    #relacion tablas
+#    #strain_ids = fields.Many2one('tb_modulo.strain', bank_id, string='Variedades')
