@@ -36,4 +36,4 @@ class bank(models.Model):
     name = fields.Char(string='Banco', required = True)
 
     #relacion tablas
-    strain_ids = fields.Many2many('tb_modulo.strain', bank_id, string='Variedades')
+    #strain_ids = fields.Many2one('tb_modulo.strain', bank_id, string='Variedades')
