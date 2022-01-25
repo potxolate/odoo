@@ -27,7 +27,7 @@ class strain(models.Model):
     semanas = fields.Integer(string='Semanas', required=True)
     descripcion = fields.Text('Descripción')
 
-    bank_id = fields.Many2many('tb_modulo.bank', string='Banco')
+    bank_id = fields.One2many('tb_modulo.bank', string='Banco')
 
 class bank(models.Model):
     _name = 'tb_modulo.bank'
@@ -36,4 +36,4 @@ class bank(models.Model):
     name = fields.Char(string='Banco', required = True)
 
     #relacion tablas
-    strain_ids = fields.Many2many('tb_modulo.strain', bank_id, string='Variedades')
+    #strain_ids = fields.Many2many('tb_modulo.strain', bank_id, string='Variedades')
