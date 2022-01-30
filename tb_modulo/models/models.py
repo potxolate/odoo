@@ -28,15 +28,17 @@ class Socio(models.Model):
     # paciente
     paciente = fields.Boolean("Paciente", default=False)
 
+
 class Strain(models.Model):
     _name = 'tb_modulo.strain'
     _description = 'Definir una Variedad'
 
     name = fields.Char('Variedad', required=True)
-    semanas = fields.Integer(string='Semanas', required=True)
+    semanas = fields.Selection(string='Semanas', selection=[('5','5'),('6','6'),('7','7'),('8','8'),('9','9')], default='5')
     descripcion = fields.Text('Descripción')
+    precio = fields.Float('Precio')
 
-    bank_id = fields.Many2many('tb_modulo.bank', string='Banco')
+    bank_id = fields.Many2one('tb_modulo.bank', string='Banco')
 
 
 class Bank(models.Model):
@@ -46,7 +48,7 @@ class Bank(models.Model):
     name = fields.Char(string='Banco', required=True)
 
 #    #relacion tablas
-    strain_ids = fields.Many2one('tb_modulo.strain', string='Variedades',required=True, ondelete='cascade' )
+    strain_ids = fields.One2many('tb_modulo.strain', 'bank_id', string='Variedades')
 
 
 class Dispensa(models.Model):
@@ -54,8 +56,9 @@ class Dispensa(models.Model):
     _description = 'Dispensa'
 
     cantidad = fields.Char(string='Cantidad', required=True)
-    fecha = fields.Date('Fecha', readonly=True, default = fields.date.today())
+    fecha = fields.Date('Fecha', readonly=True, default=fields.date.today())
 
 #    #relacion tablas
-    socio_id = fields.Many2one('res.partner', string='Socio',required=True, ondelete='cascade' )
-    strain_id = fields.Many2one('tb_modulo.strain' , string='Variedad',required=True, ondelete='cascade')
+    socio_id = fields.Many2one('res.partner', string='Socio', required=True)
+    strain_id = fields.Many2one(
+        'tb_modulo.strain', string='Variedad', required=True)
