@@ -25,8 +25,8 @@ class Socio(models.Model):
     _inherit = 'res.partner'
 
     # Add a new column to the res.partner model, by default partners are not
-    # instructors
-    instructor = fields.Boolean("Instructor", default=False)
+    # paciente
+    paciente = fields.Boolean("Paciente", default=False)
 
 class Strain(models.Model):
     _name = 'tb_modulo.strain'
@@ -36,7 +36,7 @@ class Strain(models.Model):
     semanas = fields.Integer(string='Semanas', required=True)
     descripcion = fields.Text('Descripción')
 
-    banco = fields.Many2many('tb_modulo.bank', string='Banco')
+    bank_id = fields.Many2many('tb_modulo.bank', string='Banco')
 
 
 class Bank(models.Model):
@@ -46,7 +46,7 @@ class Bank(models.Model):
     name = fields.Char(string='Banco', required=True)
 
 #    #relacion tablas
-    strains = fields.Many2one('tb_modulo.strain', string='Variedades',required=True, ondelete='cascade' )
+    strain_ids = fields.Many2one('tb_modulo.strain', string='Variedades',required=True, ondelete='cascade' )
 
 
 class Dispensa(models.Model):

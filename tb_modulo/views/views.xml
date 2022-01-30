@@ -1,61 +1,6 @@
 <odoo>
   <data>
-    <!-- explicit list view definition -->
-<!--
-    <record model="ir.ui.view" id="tb_modulo.list">
-      <field name="name">tb_modulo list</field>
-      <field name="model">tb_modulo.tb_modulo</field>
-      <field name="arch" type="xml">
-        <tree>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
-        </tree>
-      </field>
-    </record>
--->
 
-    <!-- actions opening views on models -->
-<!--
-    <record model="ir.actions.act_window" id="tb_modulo.action_window">
-      <field name="name">tb_modulo window</field>
-      <field name="res_model">tb_modulo.tb_modulo</field>
-      <field name="view_mode">tree,form</field>
-    </record>
--->
-
-    <!-- server action to the one above -->
-<!--
-    <record model="ir.actions.server" id="tb_modulo.action_server">
-      <field name="name">tb_modulo server</field>
-      <field name="model_id" ref="model_tb_modulo_tb_modulo"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": model._name,
-        }
-      </field>
-    </record>
--->
-
-    <!-- Top menu item -->
-<!--
-    <menuitem name="tb_modulo" id="tb_modulo.menu_root"/>
--->
-    <!-- menu categories -->
-<!--
-    <menuitem name="Menu 1" id="tb_modulo.menu_1" parent="tb_modulo.menu_root"/>
-    <menuitem name="Menu 2" id="tb_modulo.menu_2" parent="tb_modulo.menu_root"/>
--->
-    <!-- actions -->
-<!--
-    <menuitem name="List" id="tb_modulo.menu_1_list" parent="tb_modulo.menu_1"
-              action="tb_modulo.action_window"/>
-    <menuitem name="Server to list" id="tb_modulo" parent="tb_modulo.menu_2"
-              action="tb_modulo.action_server"/>
--->
 <!-- Vista de Socio -->
         <record model="ir.ui.view" id="res_partner_form_view_inherited">
             <field name="name">res.partner.form.view.inherited</field>
@@ -63,10 +8,10 @@
             <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
                 <notebook position="inside">
-                    <page string="Instructor">
+                    <page string="Paciente">
                         <group>
 	                        <xpath expr="//field[@name='website']" position="after">
-	                        	<field name="instructor"/>	                            
+	                        	<field name="paciente"/>
 	                        </xpath>
                         </group>
                     </page>
@@ -166,10 +111,6 @@
     <menuitem name="Variedades" id="tb_modulo.strain_menu" parent="tb_modulo.menu_root" action="tb_modulo.strain_action_window"/>
     <menuitem name="Bancos" id="tb_modulo.bank_menu" parent="tb_modulo.menu_root" action="tb_modulo.bank_action_window"/>
     <menuitem name="Dispensa" id="tb_modulo.dispensa_menu" parent="tb_modulo.menu_root" action="tb_modulo.dispensa_action_window"/>
-
-
-
-
 
 
   </data>
