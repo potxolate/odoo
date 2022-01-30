@@ -56,6 +56,19 @@
     <menuitem name="Server to list" id="tb_modulo" parent="tb_modulo.menu_2"
               action="tb_modulo.action_server"/>
 -->
+<!-- Vista de Socio -->
+        <record model="ir.ui.view" id="tb_modulo.socio_list">
+            <field name="name">tb_modulo.view.tree</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+              <xpath expr="//field[@name='name']" position="after">
+                    <field  name="paciente"/>
+                </xpath> 
+            </field>
+        </record>
+
+
   <!-- Vista de Variedad -->
 
     <record model="ir.ui.view" id="tb_modulo.strain_list">
@@ -84,6 +97,14 @@
 
  <!-- Acciones del Menú -->
 
+    
+    
+    <record model="ir.actions.act_window" id="tb_modulo.socio_action_window">
+      <field name="name">Socios</field>
+      <field name="res_model">tb_modulo.socio</field>
+      <field name="view_mode">tree,form</field>
+    </record>    
+    
     <record model="ir.actions.act_window" id="tb_modulo.strain_action_window">
       <field name="name">Variedades</field>
       <field name="res_model">tb_modulo.strain</field>
@@ -104,6 +125,7 @@
 
     <!-- menu categories -->
 
+    <menuitem name="Socios" id="tb_modulo.socios_menu" parent="tb_modulo.menu_root" action="tb_modulo.socio_action_window"/>
     <menuitem name="Variedades" id="tb_modulo.strain_menu" parent="tb_modulo.menu_root" action="tb_modulo.strain_action_window"/>
     <menuitem name="Bancos" id="tb_modulo.bank_menu" parent="tb_modulo.menu_root" action="tb_modulo.bank_action_window"/>
 

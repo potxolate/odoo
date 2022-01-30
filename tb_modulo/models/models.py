@@ -17,7 +17,14 @@
 #         for record in self:
 #             record.value2 = float(record.value) / 100
 
-from odoo import models, fields
+from odoo import _, api, fields, models
+
+
+class Socio(models.Model):
+    _inherit = 'res.partner'
+    
+    paciente = fields.Boolean(default=False , string='Paciente')
+   
 
 
 class Strain(models.Model):
@@ -28,7 +35,7 @@ class Strain(models.Model):
     semanas = fields.Integer(string='Semanas', required=True)
     descripcion = fields.Text('Descripción')
 
-    bank_id = fields.Many2many('tb_modulo.bank', string='Banco')
+    banco = fields.Many2many('tb_modulo.bank', string='Banco')
 
 
 class Bank(models.Model):
@@ -38,4 +45,4 @@ class Bank(models.Model):
     name = fields.Char(string='Banco', required=True)
 
 #    #relacion tablas
-#    #strain_ids = fields.Many2one('tb_modulo.strain', bank_id, string='Variedades')
+    strains = fields.Many2one('tb_modulo.strain', string='Variedades',required=True, ondelete='cascade' )
