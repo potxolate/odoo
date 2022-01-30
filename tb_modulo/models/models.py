@@ -17,15 +17,16 @@
 #         for record in self:
 #             record.value2 = float(record.value) / 100
 
-from odoo import _, api, fields, models
+from email.policy import default
+from odoo import models, fields, api, _
 
 
 class Socio(models.Model):
     _inherit = 'res.partner'
-    
-    paciente = fields.Boolean(default=False , string='Paciente')
-   
 
+    # Add a new column to the res.partner model, by default partners are not
+    # instructors
+    instructor = fields.Boolean("Instructor", default=False)
 
 class Strain(models.Model):
     _name = 'tb_modulo.strain'
@@ -46,3 +47,15 @@ class Bank(models.Model):
 
 #    #relacion tablas
     strains = fields.Many2one('tb_modulo.strain', string='Variedades',required=True, ondelete='cascade' )
+
+
+class Dispensa(models.Model):
+    _name = 'tb_modulo.dispensa'
+    _description = 'Dispensa'
+
+    cantidad = fields.Char(string='Cantidad', required=True)
+    fecha = fields.Date('Fecha', readonly=True, default = fields.date.today())
+
+#    #relacion tablas
+    socio_id = fields.Many2one('res.partner', string='Socio',required=True, ondelete='cascade' )
+    strain_id = fields.Many2one('tb_modulo.strain' , string='Variedad',required=True, ondelete='cascade')

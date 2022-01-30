@@ -57,14 +57,20 @@
               action="tb_modulo.action_server"/>
 -->
 <!-- Vista de Socio -->
-        <record model="ir.ui.view" id="tb_modulo.socio_list">
-            <field name="name">tb_modulo.view.tree</field>
+        <record model="ir.ui.view" id="res_partner_form_view_inherited">
+            <field name="name">res.partner.form.view.inherited</field>
             <field name="model">res.partner</field>
             <field name="inherit_id" ref="base.view_partner_form"/>
             <field name="arch" type="xml">
-              <xpath expr="//field[@name='name']" position="after">
-                    <field  name="paciente"/>
-                </xpath> 
+                <notebook position="inside">
+                    <page string="Instructor">
+                        <group>
+	                        <xpath expr="//field[@name='website']" position="after">
+	                        	<field name="instructor"/>	                            
+	                        </xpath>
+                        </group>
+                    </page>
+                </notebook>
             </field>
         </record>
 
@@ -72,7 +78,7 @@
   <!-- Vista de Variedad -->
 
     <record model="ir.ui.view" id="tb_modulo.strain_list">
-      <field name="name">tb_modulo.view.tree</field>
+      <field name="name">tb_modulo.strain.view.tree</field>
       <field name="model">tb_modulo.strain</field>
       <field name="arch" type="xml">
         <tree>
@@ -86,7 +92,7 @@
  <!-- Vista de Bancos -->
 
     <record model="ir.ui.view" id="tb_modulo.bank_list">
-      <field name="name">tb_modulo.view.tree</field>
+      <field name="name">tb_modulo.bank.view.tree</field>
       <field name="model">tb_modulo.bank</field>
       <field name="arch" type="xml">
         <tree>
@@ -95,16 +101,41 @@
       </field>
     </record>
 
+  <!-- Vista de Dispensa -->
+
+    <record model="ir.ui.view" id="tb_modulo.dispensa_list">
+      <field name="name">tb_modulo.dispensa.view.tree</field>
+      <field name="model">tb_modulo.dispensa</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="socio_id"/>
+          <field name="cantidad"/>
+          <field name="strain_id"/>
+        </tree>
+      </field>
+    </record>
+
+     <record model="ir.ui.view" id="tb_modulo.dispensa_calendar">
+      <field name="name">tb_modulo.dispensa.view.calendar</field>
+      <field name="model">tb_modulo.dispensa</field>
+      <field name="arch" type="xml">
+        <calendar string='Dispensa' date_start='fecha'>
+          <field name="socio_id"/>
+          <field name="cantidad"/>
+        </calendar>
+      </field>
+    </record>
+
  <!-- Acciones del Menú -->
 
-    
-    
+
+
     <record model="ir.actions.act_window" id="tb_modulo.socio_action_window">
       <field name="name">Socios</field>
-      <field name="res_model">tb_modulo.socio</field>
+      <field name="res_model">res.partner</field>
       <field name="view_mode">tree,form</field>
-    </record>    
-    
+    </record>
+
     <record model="ir.actions.act_window" id="tb_modulo.strain_action_window">
       <field name="name">Variedades</field>
       <field name="res_model">tb_modulo.strain</field>
@@ -117,6 +148,12 @@
       <field name="view_mode">tree,form</field>
     </record>
 
+    <record model="ir.actions.act_window" id="tb_modulo.dispensa_action_window">
+      <field name="name">Dispensa</field>
+      <field name="res_model">tb_modulo.dispensa</field>
+      <field name="view_mode">tree,form,calendar,graph</field>
+    </record>
+
 
 
     <!-- Top menu item -->
@@ -125,9 +162,10 @@
 
     <!-- menu categories -->
 
-    <menuitem name="Socios" id="tb_modulo.socios_menu" parent="tb_modulo.menu_root" action="tb_modulo.socio_action_window"/>
+    <menuitem name="Socios" id="tb_modulo.socio_menu" parent="tb_modulo.menu_root" action="tb_modulo.socio_action_window"/>
     <menuitem name="Variedades" id="tb_modulo.strain_menu" parent="tb_modulo.menu_root" action="tb_modulo.strain_action_window"/>
     <menuitem name="Bancos" id="tb_modulo.bank_menu" parent="tb_modulo.menu_root" action="tb_modulo.bank_action_window"/>
+    <menuitem name="Dispensa" id="tb_modulo.dispensa_menu" parent="tb_modulo.menu_root" action="tb_modulo.dispensa_action_window"/>
 
 
 
