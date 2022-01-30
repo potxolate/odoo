@@ -1,30 +1,42 @@
 <odoo>
     <data>
-<!--
-          <record id="object0" model="tb_modulo.tb_modulo">
-            <field name="name">Object 0</field>
-            <field name="value">0</field>
+
+          <record id="bank1" model="tb_modulo.bank">
+            <field name="name">Green House</field>            
+          </record>
+          <record id="bank2" model="tb_modulo.bank">
+            <field name="name">Genethik</field>            
           </record>
 
-          <record id="object1" model="tb_modulo.tb_modulo">
-            <field name="name">Object 1</field>
-            <field name="value">10</field>
+          <record id="strain1" model="tb_modulo.strain">
+            <field name="name">Kritical Bilbo</field>
+            <field name="semanas">7</field>
+            <field name="descripcion">Indica resistente al moho</field>
+            <field name="precio">6.50</field>
+            <field name="bank_id">2</field>
           </record>
 
-          <record id="object2" model="tb_modulo.tb_modulo">
-            <field name="name">Object 2</field>
-            <field name="value">20</field>
+          <record id="strain2" model="tb_modulo.strain">
+            <field name="name">Super Lemon Haze</field>
+            <field name="semanas">8</field>
+            <field name="descripcion">Indica resistente al moho</field>
+            <field name="precio">6.50</field>
+            <field name="bank_id">1</field>
           </record>
 
-          <record id="object3" model="tb_modulo.tb_modulo">
-            <field name="name">Object 3</field>
-            <field name="value">30</field>
+          <record id="dispensa1" model="tb_modulo.dispensa">
+            <field name="socio_id">3</field>
+            <field name="strain_id">1</field>
+            <field name="cantidad">3</field>
+            <field name="fecha">2022-2-1</field>
           </record>
 
-          <record id="object4" model="tb_modulo.tb_modulo">
-            <field name="name">Object 4</field>
-            <field name="value">40</field>
+           <record id="dispensa2" model="tb_modulo.dispensa">
+            <field name="socio_id">2</field>
+            <field name="strain_id">2</field>
+            <field name="cantidad">5</field>
+            <field name="fecha">2022-2-1</field>
           </record>
--->
+
     </data>
 </odoo>
