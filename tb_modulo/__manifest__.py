@@ -1,35 +1,24 @@
 # -*- coding: utf-8 -*-
+# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
 {
-    'name': "tb_modulo",
 
-    'summary': """
-        Modulo de prueba 1""",
-
-    'description': """
-        Un modulo para probar el desarrollo en odoo
-    """,
-
-    'author': "Tribuladores",
-    'website': "https://tribuladores.com",
-
-    # Categories can be used to filter modules in modules listing
-    # Check https://github.com/odoo/odoo/blob/14.0/odoo/addons/base/data/ir_module_category_data.xml
-    # for the full list
+    'name': "tb_gescsc",
+    'summary': 'Modulo de prueba para gestion CSC',
+    'description':'Un modulo para gestionar un Cannabis Social Club',
+    'author': 'Tribuladores',
+    'website': 'https://tribuladores.com',
     'category': 'Uncategorized',
     'version': '0.1',
-
-    # any module necessary for this one to work correctly
-    'depends': ['base'],
-
-    # always loaded
+    'depends': [
+        'base',
+    ],
     'data': [
-        # 'security/ir.model.access.csv',
         'views/views.xml',
-        'views/templates.xml',        
-
+        'views/templates.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
         'demo/demo.xml',
     ],
+    'installable': True,
 }
