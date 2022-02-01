@@ -1,19 +1,20 @@
 <odoo>
     <data>
-        <record model="ir.ui.view" id="tb_modulo.bank_list">
-          <field name="name">tb_modulo.bank.view.tree</field>
-          <field name="model">tb_modulo.bank</field>
-          <field name="arch" type="xml">
-            <tree>
-              <field name="name"/>
-            </tree>
-          </field>
-    </record>
-     <!-- Acciones del Menú -->
-    <record model="ir.actions.act_window" id="tb_modulo.bank_action_window">
-      <field name="name">Bancos</field>
-      <field name="res_model">tb_modulo.bank</field>
-      <field name="view_mode">tree,form</field>
-    </record>
+      <record model="ir.ui.view" id="tb_modulo.bank_list">
+        <field name="name">tb_modulo.bank.view.tree</field>
+        <field name="model">tb_modulo.bank</field>
+        <field name="arch" type="xml">
+          <tree>
+            <field name="name"/>
+          </tree>
+        </field>
+      </record>
+      <!-- Acciones del Menú -->
+      <record model="ir.actions.act_window" id="tb_modulo.bank_action_window">
+        <field name="name">Bancos</field>
+        <field name="res_model">tb_modulo.bank</field>
+        <field name="view_mode">tree,form</field>
+      </record>
+      <menuitem name="Bancos" id="tb_modulo.bank_menu" parent="tb_modulo.menu_root" action="tb_modulo.bank_action_window"/>
     </data>
 </odoo>

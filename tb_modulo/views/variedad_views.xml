@@ -49,5 +49,6 @@
           <field name="res_model">tb_modulo.strain</field>
           <field name="view_mode">tree,form</field>
         </record>
+        <menuitem name="Variedades" id="tb_modulo.strain_menu" parent="tb_modulo.menu_root" action="tb_modulo.strain_action_window"/>
     </data>
 </odoo>

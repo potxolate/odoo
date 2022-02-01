@@ -17,11 +17,12 @@
                 </notebook>
             </field>
         </record>
-        <!-- Acciones del Menú -->
+        <!-- Acciones del Menú -->        
         <record model="ir.actions.act_window" id="tb_modulo.socio_action_window">
             <field name="name">Socios</field>
             <field name="res_model">res.partner</field>
             <field name="view_mode">tree,form</field>
         </record>
+        <menuitem name="Socios" id="tb_modulo.socio_menu" parent="tb_modulo.menu_root" action="tb_modulo.socio_action_window"/>
     </data>
 </odoo>

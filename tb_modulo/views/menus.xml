@@ -1,0 +1,6 @@
+<odoo>
+  <data>
+    <!-- Top menu item -->
+    <menuitem name="tb_modulo" id="tb_modulo.menu_root"/>    
+  </data>
+</odoo>

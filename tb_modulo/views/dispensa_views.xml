@@ -23,11 +23,12 @@
             </calendar>
           </field>
         </record>
-         <!-- Acciones del Menú -->
+        <!-- Acciones del Menú -->        
         <record model="ir.actions.act_window" id="tb_modulo.dispensa_action_window">
           <field name="name">Dispensa</field>
           <field name="res_model">tb_modulo.dispensa</field>
           <field name="view_mode">tree,form,calendar,graph</field>
         </record>
+        <menuitem name="Dispensa" id="tb_modulo.dispensa_menu" parent="tb_modulo.menu_root" action="tb_modulo.dispensa_action_window"/>
     </data>
 </odoo>

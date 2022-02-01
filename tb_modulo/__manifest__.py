@@ -13,7 +13,7 @@
         'base',
     ],
     'data': [
-        'views/views.xml',
+        'views/menus.xml',
         'views/templates.xml',
         'views/socio_views.xml',
         'views/banco_views.xml',
