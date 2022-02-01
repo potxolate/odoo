@@ -1,40 +1,11 @@
 <odoo>
   <data>
- <!-- Acciones del Menú -->
-    <record model="ir.actions.act_window" id="tb_modulo.socio_action_window">
-      <field name="name">Socios</field>
-      <field name="res_model">res.partner</field>
-      <field name="view_mode">tree,form</field>
-    </record>
-
-    <record model="ir.actions.act_window" id="tb_modulo.strain_action_window">
-      <field name="name">Variedades</field>
-      <field name="res_model">tb_modulo.strain</field>
-      <field name="view_mode">tree,form</field>
-    </record>
-
-    <record model="ir.actions.act_window" id="tb_modulo.bank_action_window">
-      <field name="name">Bancos</field>
-      <field name="res_model">tb_modulo.bank</field>
-      <field name="view_mode">tree,form</field>
-    </record>
-
-    <record model="ir.actions.act_window" id="tb_modulo.dispensa_action_window">
-      <field name="name">Dispensa</field>
-      <field name="res_model">tb_modulo.dispensa</field>
-      <field name="view_mode">tree,form,calendar,graph</field>
-    </record>
-
     <!-- Top menu item -->
-
     <menuitem name="tb_modulo" id="tb_modulo.menu_root"/>
-
     <!-- menu categories -->
-
     <menuitem name="Socios" id="tb_modulo.socio_menu" parent="tb_modulo.menu_root" action="tb_modulo.socio_action_window"/>
     <menuitem name="Variedades" id="tb_modulo.strain_menu" parent="tb_modulo.menu_root" action="tb_modulo.strain_action_window"/>
     <menuitem name="Bancos" id="tb_modulo.bank_menu" parent="tb_modulo.menu_root" action="tb_modulo.bank_action_window"/>
     <menuitem name="Dispensa" id="tb_modulo.dispensa_menu" parent="tb_modulo.menu_root" action="tb_modulo.dispensa_action_window"/>
-
   </data>
 </odoo>

@@ -9,5 +9,11 @@
             </tree>
           </field>
     </record>
+     <!-- Acciones del Menú -->
+    <record model="ir.actions.act_window" id="tb_modulo.bank_action_window">
+      <field name="name">Bancos</field>
+      <field name="res_model">tb_modulo.bank</field>
+      <field name="view_mode">tree,form</field>
+    </record>
     </data>
 </odoo>

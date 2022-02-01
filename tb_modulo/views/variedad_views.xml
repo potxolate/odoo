@@ -43,5 +43,11 @@
           </form>
           </field>
         </record>
+        <!-- Acciones del Menú -->
+        <record model="ir.actions.act_window" id="tb_modulo.strain_action_window">
+          <field name="name">Variedades</field>
+          <field name="res_model">tb_modulo.strain</field>
+          <field name="view_mode">tree,form</field>
+        </record>
     </data>
 </odoo>

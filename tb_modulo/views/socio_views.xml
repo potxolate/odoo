@@ -17,5 +17,11 @@
                 </notebook>
             </field>
         </record>
+        <!-- Acciones del Menú -->
+        <record model="ir.actions.act_window" id="tb_modulo.socio_action_window">
+            <field name="name">Socios</field>
+            <field name="res_model">res.partner</field>
+            <field name="view_mode">tree,form</field>
+        </record>
     </data>
 </odoo>
