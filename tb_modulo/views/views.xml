@@ -1,111 +1,6 @@
 <odoo>
   <data>
-
-<!-- Vista de Socio -->
-        <record model="ir.ui.view" id="res_partner_form_view_inherited">
-            <field name="name">res.partner.form.view.inherited</field>
-            <field name="model">res.partner</field>
-            <field name="inherit_id" ref="base.view_partner_form"/>
-            <field name="arch" type="xml">
-                <notebook position="inside">
-                    <page string="Paciente">
-                        <group>
-	                        <xpath expr="//field[@name='website']" position="after">
-	                        	<field name="paciente"/>
-	                        </xpath>
-                        </group>
-                    </page>
-                </notebook>
-            </field>
-        </record>
-
-
-  <!-- Vista de Variedad -->
-
-    <record model="ir.ui.view" id="tb_modulo.strain_list">
-      <field name="name">tb_modulo.strain.view.tree</field>
-      <field name="model">tb_modulo.strain</field>
-      <field name="arch" type="xml">
-        <tree>
-          <field name="name"/>
-          <field name="semanas"/>
-          <field name="precio"/>
-        </tree>
-      </field>
-    </record>
-
-    <record model="ir.ui.view" id="tb_modulo.strain_form">
-      <field name="name">tb_modulo.strain.view.form</field>
-      <field name="model">tb_modulo.strain</field>
-      <field name="arch" type="xml">
-      <form string="Nueva Variedad">
-        <sheet>
-          <div class="oe_title">
-              <label for="name" string="Variedad"/>
-              <h1>
-                  <div class="d-flex">
-                      <field class="o_text_overflow" name="name" placeholder="e.g. Super Skunk"/>
-                  </div>
-              </h1>
-          </div>
-          <group colspan="4">
-            <group colspan="2" col="2">
-                <separator string="Banco" colspan="2"/>
-                <field name="name"/>
-                <field name="bank_id"/>
-            </group>
-
-            <group colspan="2" col="2">
-                <separator string="Dates" colspan="2"/>
-                <field name="semanas"/>
-                <field name="descripcion" readonly="1"/>
-            </group>
-          </group>
-        </sheet>
-      </form>
-      </field>
-    </record>
- <!-- Vista de Bancos -->
-
-    <record model="ir.ui.view" id="tb_modulo.bank_list">
-      <field name="name">tb_modulo.bank.view.tree</field>
-      <field name="model">tb_modulo.bank</field>
-      <field name="arch" type="xml">
-        <tree>
-          <field name="name"/>
-        </tree>
-      </field>
-    </record>
-
-  <!-- Vista de Dispensa -->
-
-    <record model="ir.ui.view" id="tb_modulo.dispensa_list">
-      <field name="name">tb_modulo.dispensa.view.tree</field>
-      <field name="model">tb_modulo.dispensa</field>
-      <field name="arch" type="xml">
-        <tree>
-          <field name="socio_id"/>
-          <field name="cantidad"/>
-          <field name="strain_id"/>
-        </tree>
-      </field>
-    </record>
-
-     <record model="ir.ui.view" id="tb_modulo.dispensa_calendar">
-      <field name="name">tb_modulo.dispensa.view.calendar</field>
-      <field name="model">tb_modulo.dispensa</field>
-      <field name="arch" type="xml">
-        <calendar string='Dispensa' date_start='fecha'>
-          <field name="socio_id"/>
-          <field name="cantidad"/>
-        </calendar>
-      </field>
-    </record>
-
  <!-- Acciones del Menú -->
-
-
-
     <record model="ir.actions.act_window" id="tb_modulo.socio_action_window">
       <field name="name">Socios</field>
       <field name="res_model">res.partner</field>
@@ -130,8 +25,6 @@
       <field name="view_mode">tree,form,calendar,graph</field>
     </record>
 
-
-
     <!-- Top menu item -->
 
     <menuitem name="tb_modulo" id="tb_modulo.menu_root"/>
@@ -142,7 +35,6 @@
     <menuitem name="Variedades" id="tb_modulo.strain_menu" parent="tb_modulo.menu_root" action="tb_modulo.strain_action_window"/>
     <menuitem name="Bancos" id="tb_modulo.bank_menu" parent="tb_modulo.menu_root" action="tb_modulo.bank_action_window"/>
     <menuitem name="Dispensa" id="tb_modulo.dispensa_menu" parent="tb_modulo.menu_root" action="tb_modulo.dispensa_action_window"/>
-
 
   </data>
 </odoo>

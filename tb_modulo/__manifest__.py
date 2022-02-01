@@ -15,6 +15,10 @@
     'data': [
         'views/views.xml',
         'views/templates.xml',
+        'views/socio_views.xml',
+        'views/banco_views.xml',
+        'views/variedad_views.xml',
+        'views/dispensa_views.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

@@ -1,0 +1,13 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="tb_modulo.bank_list">
+          <field name="name">tb_modulo.bank.view.tree</field>
+          <field name="model">tb_modulo.bank</field>
+          <field name="arch" type="xml">
+            <tree>
+              <field name="name"/>
+            </tree>
+          </field>
+    </record>
+    </data>
+</odoo>
