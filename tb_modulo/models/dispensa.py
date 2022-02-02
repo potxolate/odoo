@@ -22,7 +22,6 @@ class Dispensa(models.Model):
     strain_id = fields.Many2one(
         'tb_modulo.strain', string='Variedad', required=True)
 
-    @api.depends('cantidad', 'strain_id')
     def _compute_total_retirado(self):
         for record in self:
             variedad_retirada = self.env['tb_modulo.strain'].search([
