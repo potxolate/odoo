@@ -8,7 +8,7 @@ class Dispensa(models.Model):
     _name = 'tb_modulo.dispensa'
     _description = 'Dispensa'
 
-    cantidad = fields.Char(
+    cantidad = fields.Integer(
         string='Cantidad',
         required=True
     )
