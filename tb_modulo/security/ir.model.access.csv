@@ -1,2 +1,4 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_tb_modulo_tb_modulo,tb_modulo.tb_modulo,model_tb_modulo_tb_modulo,base.group_user,1,1,1,1
+access_tb_modulo_strain,access_tb_modulo_strain,model_tb_modulo_strain,base.group_user,1,0,0,0
+access_tb_modulo_dispensa,access_tb_modulo_dispensa,model_tb_modulo_dispensa,base.group_user,1,0,0,0
+access_tb_modulo_bank,access_tb_modulo_bank,model_tb_modulo_bank,base.group_user,1,0,0,0

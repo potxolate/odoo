@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 # Part of Odoo. See LICENSE file for full copyright and licensing details.
 
-from odoo import api, fields, models
+from odoo import _, api, fields, models
 
 
 class Dispensa(models.Model):
@@ -10,26 +10,43 @@ class Dispensa(models.Model):
 
     cantidad = fields.Integer(
         string='Cantidad',
-        required=True
+        required=True,
     )
     fecha = fields.Date(
         string='Fecha',
         readonly=True,
         default=fields.date.today()
     )
-    #    #relacion tablas
-    socio_id = fields.Many2one('res.partner', string='Socio', required=True)
+    socio_id = fields.Many2one(
+        comodel_name='res.partner', 
+        string='Socio',
+        required=True,
+        )
     strain_id = fields.Many2one(
-        'tb_modulo.strain', string='Variedad', required=True)
-
+        comodel_name='tb_modulo.strain',
+        string='Variedad',
+        required=True,
+        )
+    
     def _compute_total_retirado(self):
-        for record in self:
-            variedad_retirada = self.env['tb_modulo.strain'].search([
-                ('id', '=', record.id)
-            ])
-            record.total_retirado = variedad_retirada.precio * record.cantidad
+        for r in self:
+            r.total_retirado = r.strain_id.precio * r.cantidad
+            return r.total_retirado
 
+    def _compute_total_dia(self):
+        for r in self:
+            dispensas=self.env['tb_modulo.dispensa'].search([
+                ('fecha', '=', r.fecha)
+            ])
+            for disp in dispensas:
+                r.total_dia += disp.cantidad * disp.strain_id.precio
+            return r.total_dia
+    
     total_retirado = fields.Float(
         string='Total Retirado',
-        compute=_compute_total_retirado
+        compute=_compute_total_retirado,
+    )
+    total_dia = fields.Float(
+        string='Total Dia',
+        compute=_compute_total_dia,
     )

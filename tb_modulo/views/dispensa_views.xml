@@ -20,6 +20,7 @@
                 <calendar string='Dispensa' date_start='fecha'>
                     <field name="socio_id"/>
                     <field name="total_retirado"/>
+                    <field name="total_dia"/>
                 </calendar>
             </field>
         </record>
