@@ -4,7 +4,7 @@
 
     'name': "tb_gescsc",
     'summary': 'Modulo de prueba para gestion CSC',
-    'description':'Un modulo para gestionar un Cannabis Social Club',
+    'description': 'Un modulo para gestionar un Cannabis Social Club',
     'author': 'Tribuladores',
     'website': 'https://tribuladores.com',
     'category': 'Uncategorized',

@@ -2,26 +2,26 @@
     <data>
         <!-- Vista de Dispensa -->
         <record model="ir.ui.view" id="tb_modulo.dispensa_list">
-          <field name="name">tb_modulo.dispensa.view.tree</field>
-          <field name="model">tb_modulo.dispensa</field>
-          <field name="arch" type="xml">
-            <tree>
-              <field name="socio_id"/>
-              <field name="cantidad"/>
-              <field name="strain_id"/>
-            </tree>
-          </field>
+            <field name="name">tb_modulo.dispensa.view.tree</field>
+            <field name="model">tb_modulo.dispensa</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="socio_id"/>
+                    <field name="cantidad"/>
+                    <field name="strain_id"/>
+                </tree>
+            </field>
         </record>
         <!-- Vista de Dispensa Calendario -->
-         <record model="ir.ui.view" id="tb_modulo.dispensa_calendar">
-          <field name="name">tb_modulo.dispensa.view.calendar</field>
-          <field name="model">tb_modulo.dispensa</field>
-          <field name="arch" type="xml">
-            <calendar string='Dispensa' date_start='fecha'>
-              <field name="socio_id"/>
-              <field name="cantidad"/>
-            </calendar>
-          </field>
+        <record model="ir.ui.view" id="tb_modulo.dispensa_calendar">
+            <field name="name">tb_modulo.dispensa.view.calendar</field>
+            <field name="model">tb_modulo.dispensa</field>
+            <field name="arch" type="xml">
+                <calendar string='Dispensa' date_start='fecha'>
+                    <field name="socio_id"/>
+                    <field name="total_retirado"/>
+                </calendar>
+            </field>
         </record>
         <!-- Acciones del Menú -->        
         <record model="ir.actions.act_window" id="tb_modulo.dispensa_action_window">

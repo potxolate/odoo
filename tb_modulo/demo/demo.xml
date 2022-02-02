@@ -1,42 +1,42 @@
 <odoo>
     <data>
 
-          <record id="bank1" model="tb_modulo.bank">
+        <record id="bank1" model="tb_modulo.bank">
             <field name="name">Green House</field>
-          </record>
-          <record id="bank2" model="tb_modulo.bank">
+        </record>
+        <record id="bank2" model="tb_modulo.bank">
             <field name="name">Genethik</field>
-          </record>
+        </record>
 
-          <record id="strain1" model="tb_modulo.strain">
+        <record id="strain1" model="tb_modulo.strain">
             <field name="name">Kritical Bilbo</field>
             <field name="semanas">7</field>
             <field name="descripcion">Indica resistente al moho</field>
             <field name="precio">6.50</field>
             <field name="bank_id">2</field>
-          </record>
+        </record>
 
-          <record id="strain2" model="tb_modulo.strain">
+        <record id="strain2" model="tb_modulo.strain">
             <field name="name">Super Lemon Haze</field>
             <field name="semanas">8</field>
             <field name="descripcion">Sativa con efecto cerebral</field>
             <field name="precio">8.00</field>
             <field name="bank_id">1</field>
-          </record>
+        </record>
 
-          <record id="dispensa1" model="tb_modulo.dispensa">
+        <record id="dispensa1" model="tb_modulo.dispensa">
             <field name="socio_id">3</field>
             <field name="strain_id">1</field>
             <field name="cantidad">3</field>
             <field name="fecha">2022-2-1</field>
-          </record>
+        </record>
 
-           <record id="dispensa2" model="tb_modulo.dispensa">
+        <record id="dispensa2" model="tb_modulo.dispensa">
             <field name="socio_id">2</field>
             <field name="strain_id">2</field>
             <field name="cantidad">5</field>
             <field name="fecha">2022-2-1</field>
-          </record>
+        </record>
 
     </data>
 </odoo>
