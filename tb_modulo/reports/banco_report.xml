@@ -1,0 +1,32 @@
+<odoo>    
+    <record id="tb_modulo.banco_report" model="ir.actions.report">
+        <field name="name">Bancos</field>
+        <field name="model">tb_modulo.bank</field>
+        <field name="report_type">qweb-html</field>
+        <field name="report_name">tb_modulo.report_banco_view</field>
+        <field name="report_file">tb_modulo.report_banco</field>        
+    </record>
+    <!--
+    
+    <report
+        id="tb_modulo.banco_report"
+        model="tb_modulo.bank"
+        string="Bancos"
+        report_type="qweb-pdf"
+        name="tb_modulo.report_banco"
+        file="tb_modulo.report_banco"        
+    />
+    -->
+    <template id="report_banco_view">
+        <t t-call="web.html_container">
+            <t t-foreach="banco" t-as="b">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>Bancos</h2>
+                        <p><span t-field="b.name"/></p>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

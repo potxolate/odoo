@@ -50,3 +50,10 @@ class Dispensa(models.Model):
         string='Total Dia',
         compute=_compute_total_dia,
     )
+
+    def name_get (self):
+        resultados=[]
+        for r in self:
+            descripcion = f'{len(r)} dispensa - {r.total_retirado} €'
+            resultados.append((r.id,descripcion))
+        return resultados
