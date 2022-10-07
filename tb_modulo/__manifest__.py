@@ -13,11 +13,11 @@
         'base',
     ],
     'data': [
-        'reports/banco_report.xml',
         'views/menus.xml',
+        'reports/banco_report.xml',
         'views/templates.xml',
-        'views/socio_views.xml',
         'views/banco_views.xml',
+        'views/socio_views.xml',
         'views/variedad_views.xml',
         'views/dispensa_views.xml',        
     ],
