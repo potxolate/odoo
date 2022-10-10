@@ -1,2 +1,2 @@
 # odoo
-Testing module for CSC management on odoo 12
+Test modules for odoo 12
