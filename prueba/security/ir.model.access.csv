@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_prueba_sale,access_prueba_sale,binovo.model_sale_order,,1,1,1,1
+aaccess_prueba_wizard,aaccess_prueba_wizard,model_test_model_wizard,,1,1,1,1

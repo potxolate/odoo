@@ -1,0 +1,17 @@
+<odoo>
+  <template id="contactus_form" inherit_id="website_crm.contactus_form" name="Fuente de Contacto">
+    <xpath expr="//form/div/div/span[@id='o_website_form_result']/../.." position="before">
+      <div class="form-group row form-field">
+        <label class="col-lg-3 col-md-4 col-form-label" for="phone">¿Como nos ha conocido?</label>
+        <div class="col-lg-7 col-md-8">
+          <select class="form-control" name="fuente">
+            <option t-attf-value="'terceros'">Terceros</option>
+            <option t-attf-value="'rrss'">Redes sociales</option>
+            <option t-attf-value="'serp'">Búsqueda en Internet</option>
+          </select>
+        </div>
+      </div>
+    </xpath>
+  </template>
+</odoo>
+    

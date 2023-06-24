@@ -1,0 +1,9 @@
+<odoo>
+    <template id="website_blog_post_author_custom" inherit_id="website_blog.blog_post_complete" name="Blog post author name custom">
+        <xpath expr="//div[@id='title']" position="before">
+            <div class="mt-3 d-flex justify-content-start">
+                <h2 t-field="blog_post.company_id" placeholder="Subtitle"/>
+            </div>
+        </xpath>
+    </template>
+</odoo>

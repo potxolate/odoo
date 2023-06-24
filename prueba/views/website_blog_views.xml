@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>         
+        <record id="blog_inherit_form_view" model="ir.ui.view">
+            <field name="name">blog.inherit.form.view</field>
+            <field name="model">blog.blog</field>
+            <field name="inherit_id" ref="website_blog.view_blog_blog_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="company_id"/>
+                </xpath>
+            </field>
+        </record>
+        <record id="post_inherit_form_view" model="ir.ui.view">
+            <field name="name">post.inherit.form.view</field>
+            <field name="model">blog.post</field>
+            <field name="inherit_id" ref="website_blog.view_blog_post_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <field name="company_id"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
