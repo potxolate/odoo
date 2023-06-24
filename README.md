@@ -1,2 +1,2 @@
 # odoo
-Test modules for odoo 12
+Test modules for odoo
