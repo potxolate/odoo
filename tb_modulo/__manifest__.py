@@ -13,6 +13,8 @@
         'base',
     ],
     'data': [
+        'security/tb_modulo_security.xml',
+        'security/ir.model.access.csv',
         'views/menus.xml',
         'reports/banco_report.xml',
         'views/templates.xml',
