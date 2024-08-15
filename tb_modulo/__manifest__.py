@@ -19,7 +19,7 @@
         'reports/banco_report.xml',
         'views/templates.xml',
         'views/banco_views.xml',
-        'views/socio_views.xml',
+        'views/res_partner_views.xml',
         'views/variedad_views.xml',
         'views/dispensa_views.xml',        
     ],

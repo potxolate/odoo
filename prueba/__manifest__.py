@@ -5,7 +5,7 @@
     "category": "Uncategorized",
     "license": "AGPL-3",
     "author": "Rubén García Solís",
-    "version": "12.0.1.0.0",
+    "version": "16.0.1.0.0",
     "website": "https://github.com/potxolate",
     "summary": "Test module for job application.",
     "depends": [
