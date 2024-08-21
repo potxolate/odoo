@@ -35,7 +35,7 @@
                             </group>
                             <group colspan="2" col="2">
                                 <separator string="Dates" colspan="2"/>
-                                <field name="semanas"/>
+                                <field name="precio"/>
                                 <field name="descripcion" readonly="1"/>
                             </group>
                         </group>
